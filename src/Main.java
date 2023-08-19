@@ -1,26 +1,36 @@
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
+import java.util.*;
 public class Main {
     public static void main(String[] args) {
-        HDFCAccount demo = new HDFCAccount("demo","demo1234",50000);
-//        demo.setUserName("dem0o");
-//        demo.setPassword("demo1234");
-//        demo.setBal(50000);
-//        setter functions is not be needed for ther paramaterized constructor
-        System.out.println(demo);
-//        fetch balance
-        System.out.println(demo.fetchBalance("demo123"));// wronng password
-        System.out.println(demo.fetchBalance("demo1234"));// correct passowrd
-//        withdrawl
-        System.out.println(demo.withdraw(60000,"demo1234")); // withdrawing amount more than available balance
-        System.out.println(demo.withdraw(6000,"demo1234")); // amount is less than available balance
-        System.out.println(demo.withdraw(6000,"demo12345")); // password is wrong
-//        calculate rate of intrest
-        System.out.println(demo.calculateInterest(5));
-//        changing password
-        System.out.println(demo.changePassword("deomo212","demo"));// i am checking that my wrong password message is appearing or not
-        System.out.println(demo.changePassword("demo1234","demo"));
-//        adding money
-        System.out.println(demo.addMoney(6000));
+        System.out.println("choose your bank press A for HDFC and B for SBI");
+        Scanner sc = new Scanner(System.in);
+
+//      HDFC Account
+        HDFCAccount hdfc = new HDFCAccount("hdfc","hdfc1234",2020.02);
+        System.out.println(hdfc);
+        System.out.println(hdfc.fetchBalance("hdfc123"));// wrong password
+        System.out.println(hdfc.fetchBalance("hdfc1234"));//correct password
+        System.out.println(hdfc.addMoney(5050));
+        System.out.println(hdfc.withdraw(2020.020,"hdfc123"));//wrong password
+        System.out.println( hdfc.withdraw(2020.020,"hdfc1234"));//correct password
+        System.out.println(hdfc.changePassword("hdfc234","hdfc00"));//wrong password
+        System.out.println(hdfc.changePassword("hdfc1234","hdfc00"));//correct password
+//        SBI account
+//        else if (choice.equals("b")) {
+
+            SBIAccount sbi = new SBIAccount("sbi","sbi123",2020.20);
+        System.out.println(sbi);
+            System.out.println(sbi.fetchBalance("sb123"));// wrong password
+            System.out.println(sbi.fetchBalance("sbi123"));//correct password
+            System.out.println(sbi.addMoney(5050));
+            System.out.println(sbi.withdraw(2020.020,"sb123"));//wrong password
+            System.out.println( sbi.withdraw(2020.020,"sbi123"));//correct password
+            System.out.println(sbi.changePassword("hdfc234","hdfc00"));//wrong password
+            System.out.println(sbi.changePassword("sbi123","sbi00"));//correct password
+
+
+//
+
     }
 }
